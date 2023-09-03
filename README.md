@@ -2,7 +2,7 @@
 
 Looking to add a personal touch to your Windows 11 machine?
 
-This repository contains a compilation of various tools and scripts that you can use to customize your Windows experience and make it truly your own.
+This repository contains a compilation of various tools and scripts that I found out about about to customize the _Windows experience_.
 
 - [Customize Windows 💻🖌️✨](#customize-windows-️)
   - [Startup Text in Windows Terminal 💬](#startup-text-in-windows-terminal-)
