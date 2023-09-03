@@ -8,6 +8,12 @@ This repository contains a compilation of various tools and scripts that you can
   - [Startup Text in Windows Terminal 💬](#startup-text-in-windows-terminal-)
     - [Prerequisites](#prerequisites)
     - [Usage](#usage)
+  - [Useful PS1 Scripts](#useful-ps1-scripts)
+    - [GitHub Repository Downloader and Extractor](#github-repository-downloader-and-extractor)
+      - [Description](#description)
+      - [Usage](#usage-1)
+      - [Parameters](#parameters)
+      - [Examples](#examples)
 
 You'll need [Powershell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3) to execute ps1 scripts
 
@@ -50,3 +56,45 @@ We can edit the PowerShell profile at `$profile` to run some startup commands
    - Create a new folder for scripts somewhere and create a new file with its name ending with ps1.
    - You can use the commands `Write-Figlet` and `Write-FormattedText` to generate the text you need. An example profile script is given [here](terminal-startup/Example-Profile.ps1)
    - Now, link this ps1 file to a profile in the terminal by editing the Command Line option in the profile settings: `powershell.exe -noprofile -noexit -command "invoke-expression '. ''<Path To The PS1 File>''' "`
+
+## Useful PS1 Scripts
+
+### GitHub Repository Downloader and Extractor
+
+#### Description
+
+This PowerShell script allows you to download a GitHub repository as a zipball archive and extract it to a specified destination folder while excluding specific files and folders.
+
+#### Usage
+
+```powershell
+.\Get-Repo.ps1 -githubRepoURL "<GitHubRepoURL>" -branch "<BranchName>" -toExclude @("<FileOrFolder1>", "<FileOrFolder2>") -destinationFolder "<DestinationFolder>"
+```
+
+#### Parameters
+
+- `githubRepoURL`
+
+The URL of the GitHub repository to download. It should be in the format `https://github.com/owner/repository`.
+
+- `branch`
+
+The name of the branch to download from the GitHub repository.
+
+- `toExclude`
+
+An array of file/folder names to exclude from the extracted content.
+
+- `destinationFolder`
+
+The folder where the repository will be extracted.
+
+#### Examples
+
+```powershell
+# Example 1: Download and extract a GitHub repository, excluding specific files and folders
+.\Get-Repo.ps1 -githubRepoURL "https://github.com/example/repo" -branch "main" -toExclude @("config.ini", "docs") -destinationFolder "C:\Projects\MyRepo"
+
+# Example 2: Download and extract another GitHub repository
+.\Get-Repo.ps1 -githubRepoURL "https://github.com/chakri68/webpack-babel-template" -branch "with-typescript" -destinationFolder "./webpack-template"
+```
