@@ -98,3 +98,36 @@ The folder where the repository will be extracted.
 # Example 2: Download and extract another GitHub repository
 .\Get-Repo.ps1 -githubRepoURL "https://github.com/chakri68/webpack-babel-template" -branch "with-typescript" -destinationFolder "./webpack-template"
 ```
+
+### [Quotes from goodreads on terminal startup](/useful-scripts/GoodreadsQuotes/Display-Quote.ps1)
+
+#### Description
+
+This PowerShell script allows you to get a random quote from goodreads and display it on terminal startup.
+
+#### Prerequisites
+
+This script required a json file with quotes
+
+The schema for the json file is as follows:
+
+```ts
+type JSONFile = Quote[];
+
+type Quote = {
+  text: string;
+  author: string;
+};
+```
+
+We can use a python script that runs every few days to get the quotes from goodreads and store them in a json file. We can use Task Scheduler to run the script every few days.
+
+You can find the example python script I use [here](/useful-scripts/GoodreadsQuotes/)
+
+#### Usage
+
+You can run the script by passing the path to the json file as a parameter
+
+```powershell
+Display-Quote -quotesFilePath "<Path to the json file>"
+```
