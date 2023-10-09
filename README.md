@@ -14,6 +14,10 @@ This repository contains a compilation of various tools and scripts that I found
       - [Usage](#usage-1)
       - [Parameters](#parameters)
       - [Examples](#examples)
+    - [Quotes from goodreads on terminal startup](#quotes-from-goodreads-on-terminal-startup)
+      - [Description](#description-1)
+      - [Prerequisites](#prerequisites-1)
+      - [Usage](#usage-2)
 
 You'll need [Powershell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3) to execute ps1 scripts
 
